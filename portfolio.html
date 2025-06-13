@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Product Manager</title>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #1c1c1c; color: #f2f2f2;">
+
+  <!-- Top Navigation -->
+  <header style="position: absolute; top: 0; right: 0; padding: 20px;">
+    <nav>
+      <a href="About me.html" style="color: #f2f2f2; margin-right: 20px; text-decoration: none; font-weight: bold; font-size: 16px;">About Me</a>
+      <a href="portfolio.html" style="color: #f2f2f2; text-decoration: none; font-weight: bold; font-size: 16px;">Portfolio</a>
+    </nav>
+  </header>
+
+  <main style="padding: 80px 40px 60px; max-width: 1200px; margin: auto;">
+    <h1 style="text-align: center; font-size: 36px; margin-bottom: 50px;">My Projects</h1>
+
+    <!-- Project Boxes -->
+    <section style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+
+      <!-- Project Card Template -->
+      <div contenteditable="true"
+           style="flex: 1 1 300px; background-color: #2b2b2b; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #111; max-width: 350px; cursor: text;">
+        <label for="img1">
+          <img id="preview1" src="https://via.placeholder.com/300x180.png?text=Project+Screenshot"
+               alt="Project" style="width: 100%; border-radius: 5px; object-fit: cover; margin-bottom: 15px;">
+        </label>
+        <input type="file" id="img1" style="display: none;" accept="image/*" onchange="loadImage(event, 'preview1')" />
+
+        <h3>📌 Project Title</h3>
+        <p><strong>Problem:</strong> Describe the problem</p>
+        <p><strong>Solution:</strong> Describe your solution</p>
+        <p><strong>Role:</strong> What was your role?</p>
+        <p><strong>Tools Used:</strong> List tools</p>
+        <p><strong>Timeline:</strong> Duration</p>
+        <p><strong>Outcome:</strong> What changed or improved?</p>
+        <p><strong>Metrics:</strong> Quantify success</p>
+        <p><strong>Lessons:</strong> What did you learn?</p>
+      </div>
+
+      <!-- Copy and customize more -->
+      <div contenteditable="true"
+           style="flex: 1 1 300px; background-color: #2b2b2b; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #111; max-width: 350px; cursor: text;">
+        <label for="img2">
+          <img id="preview2" src="https://via.placeholder.com/300x180.png?text=Project+Screenshot"
+               alt="Project" style="width: 100%; border-radius: 5px; object-fit: cover; margin-bottom: 15px;">
+        </label>
+        <input type="file" id="img2" style="display: none;" accept="image/*" onchange="loadImage(event, 'preview2')" />
+
+        <h3>📌 Project Title</h3>
+        <p><strong>Problem:</strong> Describe the problem</p>
+        <p><strong>Solution:</strong> Describe your solution</p>
+        <p><strong>Role:</strong> What was your role?</p>
+        <p><strong>Tools Used:</strong> List tools</p>
+        <p><strong>Timeline:</strong> Duration</p>
+        <p><strong>Outcome:</strong> What changed or improved?</p>
+        <p><strong>Metrics:</strong> Quantify success</p>
+        <p><strong>Lessons:</strong> What did you learn?</p>
+      </div>
+
+      <div contenteditable="true"
+           style="flex: 1 1 300px; background-color: #2b2b2b; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #111; max-width: 350px; cursor: text;">
+        <label for="img3">
+          <img id="preview3" src="https://via.placeholder.com/300x180.png?text=Project+Screenshot"
+               alt="Project" style="width: 100%; border-radius: 5px; object-fit: cover; margin-bottom: 15px;">
+        </label>
+        <input type="file" id="img3" style="display: none;" accept="image/*" onchange="loadImage(event, 'preview3')" />
+
+        <h3>📌 Project Title</h3>
+        <p><strong>Problem:</strong> Describe the problem</p>
+        <p><strong>Solution:</strong> Describe your solution</p>
+        <p><strong>Role:</strong> What was your role?</p>
+        <p><strong>Tools Used:</strong> List tools</p>
+        <p><strong>Timeline:</strong> Duration</p>
+        <p><strong>Outcome:</strong> What changed or improved?</p>
+        <p><strong>Metrics:</strong> Quantify success</p>
+        <p><strong>Lessons:</strong> What did you learn?</p>
+      </div>
+
+    </section>
+
+    <!-- Skills and Tools -->
+    <section style="margin-top: 60px;">
+      <h2 style="text-align: center; font-size: 28px;">Skills</h2>
+      <p style="text-align: center; font-size: 18px; max-width: 900px; margin: 10px auto 40px; color: #ccc;">
+        User and Market Research, Product Management, Wireframing, Product Analytics, Product Strategy, Stakeholder Management,
+        Team Management, Leadership, Agile Methodologies, Product Roadmap
+      </p>
+
+      <h2 style="text-align: center; font-size: 28px;">Tools</h2>
+      <p style="text-align: center; font-size: 18px; color: #ccc;">
+        Notion, Figma, Mixpanel, Postman, Jira, Linear, AI
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Script to preview uploaded images -->
+  <script>
+    function loadImage(event, targetId) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        document.getElementById(targetId).src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+
+</body>
+</html>

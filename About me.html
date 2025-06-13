@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Me - Product Manager</title>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #1c1c1c; color: #f2f2f2;">
+
+  <!-- Top Navigation -->
+  <header style="position: absolute; top: 0; right: 0; padding: 20px;">
+    <nav>
+      <a href="About me.html" style="color: #f2f2f2; margin-right: 20px; text-decoration: none; font-weight: bold; font-size: 16px;">About Me</a>
+      <a href="portfolio.html" style="color: #f2f2f2; text-decoration: none; font-weight: bold; font-size: 16px;">Portfolio</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <main style="display: flex; flex-direction: row; height: 100vh;">
+
+    <!-- Left Side - Image -->
+    <div style="flex: 1; background-color: #000; display: flex; justify-content: center; align-items: center;">
+      <label for="profile-img-input" style="cursor: pointer;">
+        <img id="profile-img"
+             src="https://via.placeholder.com/400x500.png?text=Your+Photo"
+             alt="Your Photo"
+             style="height: 90%; width: auto; max-width: 100%; object-fit: cover; border: 5px solid #333;" />
+      </label>
+      <input type="file" id="profile-img-input" accept="image/*"
+             style="display: none;" onchange="previewImage(event)" />
+    </div>
+
+    <!-- Right Side - About Me Text -->
+    <div style="flex: 1; padding: 60px 40px; display: flex; flex-direction: column; justify-content: center;">
+      <h1 style="font-size: 36px; margin-bottom: 20px;">Hello, I'm <span contenteditable="true">[Your Name]</span></h1>
+      <p contenteditable="true" style="line-height: 1.7; font-size: 18px; color: #cccccc;">
+        I’m a product manager who thrives on turning ideas into impact. I blend curiosity, user empathy, and technical understanding
+        to bring digital products to life. From defining roadmaps to writing PRDs, I work cross-functionally to deliver user-centered experiences.
+        <br><br>
+        Click this text to update your personal story, background, values, or aspirations.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Inline Script for Image Preview -->
+  <script>
+    function previewImage(event) {
+      const input = event.target;
+      const reader = new FileReader();
+      reader.onload = function () {
+        const img = document.getElementById("profile-img");
+        img.src = reader.result;
+      };
+      if (input.files && input.files[0]) {
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+</body>
+</html>
