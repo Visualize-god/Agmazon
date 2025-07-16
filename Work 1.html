@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gradific | Precious Omoyeni</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #000;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 40px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 5px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .tag {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .toc a {
+      display: block;
+      color: #000;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .link {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Precious Omoyeni</div>
+    <nav>
+      <a href="index.html">About Me</a>
+      <a href="Purpose.html">Portfolio</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h1>Gradific – Grading Platform</h1>
+    <p>
+      <strong>Product:</strong> Gradific <br>
+      <strong>Category:</strong> Education <br>
+      <strong>Tools:</strong> Figma, Google Docs, Google Sheets, Trello, Linear <br>
+      <strong>Product Asset:</strong> PRD <br>
+      <strong>Product Link:</strong> <a class="link" href="https://gradfic.com" target="_blank">gradfic.com</a>
+    </p>
+
+    <h2>Table of Contents</h2>
+    <div class="toc">
+      <a href="#overview">Product Overview</a>
+      <a href="#problem">Problem Statement</a>
+      <a href="#goals">Goals & Solution</a>
+      <a href="#userflow">User Flow</a>
+      <a href="#research">Market and User Research</a>
+      <a href="#personas">User Persona</a>
+      <a href="#journey">User Flow & Customer Journey Map</a>
+      <a href="#metrics">Success Metrics</a>
+      <a href="#role">My Role / Tasks</a>
+      <a href="#learnings">Key Learnings</a>
+    </div>
+
+    <div id="overview" class="section">
+      <h2>Product Overview</h2>
+      <p>
+        Gradific is a web-based grading tool tailored to meet the grading needs of academic institutions. It empowers admins to track learner performance, enables moderators (teachers) to manage assignments and grades efficiently, and motivates learners with real-time feedback. Gradific’s primary focus is Nigeria.
+      </p>
+    </div>
+
+    <div id="problem" class="section">
+      <h2>Problem Statement</h2>
+      <p>
+        Academic institutions in Nigeria struggle with traditional grading methods, which are stressful and time-consuming.
+      </p>
+    </div>
+
+    <div id="goals" class="section">
+      <h2>Goals & Solution</h2>
+      <h3>Goals</h3>
+      <ul>
+        <li>Streamline assignment creation and submission workflows.</li>
+        <li>Reduce manual grading workload with automation.</li>
+        <li>Ensure fairness and clarity in grading criteria.</li>
+      </ul>
+      <h3>Solution</h3>
+      <p>A comprehensive platform with:</p>
+      <ul>
+        <li>Task creation and assignment features.</li>
+        <li>Member onboarding and submission portals.</li>
+        <li>Manual and automated grading tools.</li>
+      </ul>
+    </div>
+
+    <div id="userflow" class="section">
+      <h2>User Flow</h2>
+      <p>View flow: <a class="link" href="#" target="_blank">Gradific User Flow</a></p>
+    </div>
+
+    <div id="research" class="section">
+      <h2>Market and User Research</h2>
+      <h3>Market Insights</h3>
+      <ul>
+        <li>Nigeria's institutions have increasing demand for scalable grading tools.</li>
+        <li>Many institutions rely on manual processes or rigid LMSs with limited flexibility.</li>
+      </ul>
+    </div>
+
+    <div id="personas" class="section">
+      <h2>User Persona</h2>
+      <div class="grid">
+        <div>
+          <h3>1. The Owner (Admin)</h3>
+          <p><strong>Goals:</strong> Track performance, manage moderators, make data-driven decisions.</p>
+          <p><strong>Pain:</strong> Cannot monitor thousands of learners in real time.</p>
+        </div>
+        <div>
+          <h3>2. The Moderator (Teacher)</h3>
+          <p><strong>Goals:</strong> Grade faster, give feedback, manage tasks.</p>
+          <p><strong>Pain:</strong> High volume of grading and limited tools for delegation.</p>
+        </div>
+      </div>
+      <h3>3. The Member (Student)</h3>
+      <p><strong>Goals:</strong> Submit on time, get feedback, get promoted.</p>
+      <p><strong>Pain:</strong> Unclear grading system and delayed results.</p>
+    </div>
+
+    <div id="journey" class="section">
+      <h2>User Flow & Customer Journey Map</h2>
+      <ul>
+        <li>Owner Onboarding → Workspace Creation → Moderator Invitation → Path Assignment.</li>
+        <li>Moderator Task Creation → Set grading criteria → Publish to assigned paths.</li>
+        <li>Member Submission → View dashboard → Submit link → Await feedback.</li>
+        <li>Grading → Manual or automated → Performance updated.</li>
+      </ul>
+      <p><strong>Customer Journey Highlights:</strong></p>
+      <ul>
+        <li>Moderators can assign tasks and grades within a unified dashboard.</li>
+        <li>Learners can be graded automatically and get feedback.</li>
+      </ul>
+    </div>
+
+    <div id="metrics" class="section">
+      <h2>Success Metrics</h2>
+      <ul>
+        <li>80% Assignment Completion Rate</li>
+        <li>Low churn rate</li>
+        <li>100% Grading fairness</li>
+        <li>High system reliability</li>
+      </ul>
+    </div>
+
+    <div id="role" class="section">
+      <h2>My Role / Tasks</h2>
+      <ul>
+        <li>Authored the full PRD alongside other PMs</li>
+        <li>Mapped user flows and supervised Figma design reviews</li>
+        <li>Defined acceptance criteria</li>
+        <li>Worked closely with the developers to complete tasks</li>
+        <li>Led milestone planning with the engineering team</li>
+      </ul>
+    </div>
+
+    <div id="learnings" class="section">
+      <h2>Key Learnings</h2>
+      <ul>
+        <li>Stakeholder alignment early on prevents mid-project pivots</li>
+        <li>Several iterations might affect project timeline</li>
+        <li>Iterative beta testing with real users accelerated improvements pre-launch</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>

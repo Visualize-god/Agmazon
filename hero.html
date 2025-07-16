@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precious Omoyeni | Product Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --beige: #fdf6ec;
+      --charcoal: #2e2e2e;
+      --primary: #7a5c3d;
+      --font: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--beige);
+      color: var(--charcoal);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--beige);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    /* Mobile nav */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: var(--charcoal);
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #fdf6ec, #f9e8c9);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .hero h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out 0.1s;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out 0.2s;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .btn.secondary {
+      border: 2px solid var(--charcoal);
+      color: var(--charcoal);
+      background: transparent;
+    }
+
+    .icon-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .icon-links a {
+      background: #fff;
+      padding: 0.75rem;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav a {
+        text-decoration: none;
+        color: var(--charcoal);
+        font-weight: 500;
+      }
+    }
+
+    /* Animation classes added by JS */
+    .animate {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Precious Omoyeni</div>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact Me</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1 id="heroTitle">Omoyeni Taiye Precious</h1>
+    <h2 id="heroRole">Product Manager</h2>
+    <p id="heroTagline">I turn complex user problems into elegant digital solutions that drive business growth.</p>
+
+    <div class="btn-group">
+      <a href="#projects" class="btn primary">View My Work</a>
+      <a href="#contact" class="btn secondary">Get In Touch</a>
+    </div>
+
+    <div class="icon-links">
+      <a href="mailto:youremail@example.com">📧</a>
+      <a href="https://linkedin.com/in/yourprofile">🔗</a>
+      <a href="https://twitter.com/yourhandle">❌</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileNav").classList.toggle("show");
+    }
+
+    // Animate on scroll
+    window.addEventListener("scroll", () => {
+      const heroTitle = document.getElementById("heroTitle");
+      const heroRole = document.getElementById("heroRole");
+      const heroTagline = document.getElementById("heroTagline");
+
+      const scrollY = window.scrollY + window.innerHeight;
+
+      [heroTitle, heroRole, heroTagline].forEach((el) => {
+        if (scrollY > el.offsetTop + 100) {
+          el.classList.add("animate");
+        }
+      });
+    });
+
+    // Trigger initial load animation
+    window.addEventListener("load", () => {
+      document.querySelectorAll("#heroTitle, #heroRole, #heroTagline").forEach(el => el.classList.add("animate"));
+    });
+  </script>
+
+</body>
+</html>

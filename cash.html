@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AGMAZON - The Future of Agro-Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        padding-left: 20px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #004d40;
+        padding: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+        text-align: center;
+      }
+
+      .nav-links a {
+        display: block;
+        margin: 15px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .auth-buttons {
+        display: none;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex !important;
+      }
+
+      .auth-buttons {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f5f9f8; color: #333;">
+
+  <!-- Navigation Bar -->
+  <header style="background-color: #004d40; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000;">
+    <div style="display: flex; align-items: center;">
+      <span style="font-size: 24px; color: #ffffff; font-weight: bold;">🌾 AGMAZON</span>
+      <span class="nav-toggle" onclick="toggleMenu()">☰</span>
+    </div>
+
+    <nav id="navMenu" class="nav-links" style="flex: 1; text-align: center;">
+      <a href="#home" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">Home</a>
+      <a href="#about" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">About Us</a>
+      <a href="#services" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">Services</a>
+      <a href="#faq" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">FAQ</a>
+      <a href="#contact" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">Contact Us</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <a href="Login.html" style="margin-right: 15px; background-color: #00796b; color: white; padding: 8px 14px; border-radius: 4px; text-decoration: none;">Login</a>
+      <a href="Signup.html" style="background-color: #00acc1; color: white; padding: 8px 14px; border-radius: 4px; text-decoration: none;">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 80px 40px; background: linear-gradient(to right, #e0f2f1, #ffffff);">
+    <div style="flex: 1; padding-right: 40px; min-width: 300px;">
+      <h1 style="font-size: 42px; color: #004d40;">Bridging Farmers and Markets</h1>
+      <p style="font-size: 18px; line-height: 1.6; margin-top: 20px;">AGMAZON connects smallholder farmers with reliable buyers using a digital-first, mobile-friendly platform. Fresh produce. Trusted sellers. Transparent logistics.</p>
+      <a href="Signup.html" style="display: inline-block; margin-top: 25px; background-color: #00796b; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
+    </div>
+    <div style="flex: 1; min-width: 300px;">
+      <img src="AGMAZON.jpg" alt="Hero Image" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" />
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" style="padding: 60px 40px; background-color: #ffffff;">
+    <h2 style="text-align: center; color: #004d40;">About Us</h2>
+    <p style="max-width: 800px; margin: 20px auto; text-align: center; font-size: 17px; line-height: 1.6;">
+      AGMAZON is a digital agricultural marketplace designed for African farmers and buyers. We simplify access, streamline logistics, and ensure quality through verified sellers and real-time tracking. From local produce to farm tools — AGMAZON is your go-to agri-commerce platform.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" style="padding: 60px 40px; background-color: #e0f2f1;">
+    <h2 style="text-align: center; color: #004d40;">What We Offer</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px;">
+      <div style="flex: 1 1 250px; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h3 style="color: #00796b;">🌽 Verified Produce Listings</h3>
+        <p>Farmers upload detailed product info including price, harvest date, and quality certifications.</p>
+      </div>
+      <div style="flex: 1 1 250px; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h3 style="color: #00796b;">📦 Seamless Order & Delivery</h3>
+        <p>Buyers place orders, select delivery, and track items with full visibility.</p>
+      </div>
+      <div style="flex: 1 1 250px; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h3 style="color: #00796b;">💰 Secure Payment Options</h3>
+        <p>Multiple payment modes including wallet, USSD, and mobile money — fully encrypted.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding: 60px 40px; background-color: #ffffff;">
+    <h2 style="text-align: center; color: #004d40;">FAQs</h2>
+    <div style="max-width: 800px; margin: auto; margin-top: 30px;">
+      <p><strong>How do I register as a farmer?</strong><br />You can sign up directly or through an AGMAZON field agent who will help you verify your ID and farm location.</p>
+      <p><strong>Can buyers trust the product quality?</strong><br />Yes! Sellers are verified and buyers can view seller ratings, freshness tags, and product images before ordering.</p>
+      <p><strong>How are deliveries handled?</strong><br />AGMAZON partners with reliable logistics teams to ensure fast and transparent deliveries across Nigeria.</p>
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <section id="contact" style="padding: 60px 40px; background-color: #e0f2f1;">
+    <h2 style="text-align: center; color: #004d40;">Contact Us</h2>
+    <p style="text-align: center;">Email: support@agmazon.africa | WhatsApp: +234-000-000-0000</p>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: #004d40; color: white; text-align: center; padding: 20px;">
+    &copy; 2025 AGMAZON. All rights reserved. | Made with 💚 in Africa
+  </footer>
+
+  
+
+</body>
+</html>

@@ -2,92 +2,415 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AGMAZON - The Future of Agro-Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precious Omoyeni | Product Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Include Header + Hero Section -->
+  <!-- Drag your hero.html content below -->
+  <div id="hero-section">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precious Omoyeni | Product Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    html {
+    :root {
+      --beige: #fdf6ec;
+      --charcoal: #2e2e2e;
+      --primary: #7a5c3d;
+      --font: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--beige);
+      color: var(--charcoal);
       scroll-behavior: smooth;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--beige);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+
+    /* Mobile nav */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: var(--charcoal);
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .show {
+      display: flex !important;
+    }
+
+    .hero {
+      background: linear-gradient(to bottom right, #fdf6ec, #f9e8c9);
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .hero h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out 0.1s;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out 0.2s;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .btn.secondary {
+      border: 2px solid var(--charcoal);
+      color: var(--charcoal);
+      background: transparent;
+    }
+
+    .icon-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .icon-links a {
+      background: #fff;
+      padding: 0.75rem;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav a {
+        text-decoration: none;
+        color: var(--charcoal);
+        font-weight: 500;
+      }
+    }
+
+    /* Animation classes added by JS */
+    .animate {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
   </style>
 </head>
-<body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f5f9f8; color: #333;">
 
-  <!-- Navigation Bar -->
-  <header style="background-color: #004d40; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000;">
-    <div style="font-size: 24px; color: #ffffff; font-weight: bold;">
-      🌾 AGMAZON
-    </div>
-    <nav style="flex: 1; text-align: center;">
-      <a href="#home" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">Home</a>
-      <a href="#about" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">About Us</a>
-      <a href="#services" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">Services</a>
-      <a href="#faq" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">FAQ</a>
-      <a href="#contact" style="margin: 0 15px; color: #ffffff; text-decoration: none; font-weight: 500;">Contact Us</a>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Precious Omoyeni</div>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact Me</a>
     </nav>
-    <div>
-      <a href="Login.html" style="margin-right: 15px; background-color: #00796b; color: white; padding: 8px 14px; border-radius: 4px; text-decoration: none;">Login</a>
-      <a href="Signup.html" style="background-color: #00acc1; color: white; padding: 8px 14px; border-radius: 4px; text-decoration: none;">Sign Up</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
   </header>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact Me</a>
+  </div>
+
   <!-- Hero Section -->
-  <section id="home" style="display: flex; align-items: center; justify-content: space-between; padding: 80px 40px; background: linear-gradient(to right, #e0f2f1, #ffffff);">
-    <div style="flex: 1; padding-right: 40px;">
-      <h1 style="font-size: 42px; color: #004d40;">Bridging Farmers and Markets</h1>
-      <p style="font-size: 18px; line-height: 1.6; margin-top: 20px;">AGMAZON connects smallholder farmers with reliable buyers using a digital-first, mobile-friendly platform. Fresh produce. Trusted sellers. Transparent logistics.</p>
-      <a href="Signup.html" style="display: inline-block; margin-top: 25px; background-color: #00796b; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold;">Get Started</a>
-    </div>
-    <div style="flex: 1;">
-      <img src="AGMAZON.jpg" alt="Hero Image" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" />
-    </div>
-  </section>
+  <section id="home" class="hero">
+    <h1 id="heroTitle">Omoyeni Taiye Precious</h1>
+    <h2 id="heroRole">Product Manager</h2>
+    <p id="heroTagline">I turn complex user problems into useful digital solutions that drive business growth.</p>
 
-  <!-- About Us -->
-  <section id="about" style="padding: 60px 40px; background-color: #ffffff;">
-    <h2 style="text-align: center; color: #004d40;">About Us</h2>
-    <p style="max-width: 800px; margin: 20px auto; text-align: center; font-size: 17px; line-height: 1.6;">
-      AGMAZON is a digital agricultural marketplace designed for African farmers and buyers. We simplify access, streamline logistics, and ensure quality through verified sellers and real-time tracking. From local produce to farm tools — AGMAZON is your go-to agri-commerce platform.
-    </p>
-  </section>
+    <div class="btn-group">
+      <a href="#projects" class="btn primary">View My Work</a>
+      <a href="#contact" class="btn secondary">Get In Touch</a>
+    </div>
 
-  <!-- Services -->
-  <section id="services" style="padding: 60px 40px; background-color: #e0f2f1;">
-    <h2 style="text-align: center; color: #004d40;">What We Offer</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px;">
-      <div style="flex: 1 1 250px; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h3 style="color: #00796b;">🌽 Verified Produce Listings</h3>
-        <p>Farmers upload detailed product info including price, harvest date, and quality certifications.</p>
-      </div>
-      <div style="flex: 1 1 250px; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h3 style="color: #00796b;">📦 Seamless Order & Delivery</h3>
-        <p>Buyers place orders, select delivery, and track items with full visibility.</p>
-      </div>
-      <div style="flex: 1 1 250px; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h3 style="color: #00796b;">💰 Secure Payment Options</h3>
-        <p>Multiple payment modes including wallet, USSD, and mobile money — fully encrypted.</p>
-      </div>
+    <div class="icon-links">
+      <a href="preciousomoyeni6@gmail.com">📧</a>
+      <a href="https://www.linkedin.com/in/precious-omoyeni-a4ba3425b?">🔗</a>
+      <a href="https://twitter.com/yourhandle">❌</a>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" style="padding: 60px 40px; background-color: #ffffff;">
-    <h2 style="text-align: center; color: #004d40;">FAQs</h2>
-    <div style="max-width: 800px; margin: auto; margin-top: 30px;">
-      <p><strong>How do I register as a farmer?</strong><br />You can sign up directly or through an AGMAZON field agent who will help you verify your ID and farm location.</p>
-      <p><strong>Can buyers trust the product quality?</strong><br />Yes! Sellers are verified and buyers can view seller ratings, freshness tags, and product images before ordering.</p>
-      <p><strong>How are deliveries handled?</strong><br />AGMAZON partners with reliable logistics teams to ensure fast and transparent deliveries across Nigeria.</p>
-    </div>
-  </section>
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileNav").classList.toggle("show");
+    }
 
-  <!-- Contact Us -->
-  <section id="contact" style="padding: 60px 40px; background-color: #e0f2f1;">
-    <h2 style="text-align: center; color: #004d40;">Contact Us</h2>
-    <p style="text-align: center;">Email: support@agmazon.africa | WhatsApp: +234-000-000-0000</p>
-  </section>
+    // Animate on scroll
+    window.addEventListener("scroll", () => {
+      const heroTitle = document.getElementById("heroTitle");
+      const heroRole = document.getElementById("heroRole");
+      const heroTagline = document.getElementById("heroTagline");
+
+      const scrollY = window.scrollY + window.innerHeight;
+
+      [heroTitle, heroRole, heroTagline].forEach((el) => {
+        if (scrollY > el.offsetTop + 100) {
+          el.classList.add("animate");
+        }
+      });
+    });
+
+    // Trigger initial load animation
+    window.addEventListener("load", () => {
+      document.querySelectorAll("#heroTitle, #heroRole, #heroTagline").forEach(el => el.classList.add("animate"));
+    });
+  </script>
+
+</body>
+</html>
+
+  </div>
+
+  <!-- Include About Me Section -->
+  <!-- Drag your about.html content below -->
+  <div id="about-section">
+    <section id="about" style="background-color: #fff; padding: 4rem 2rem; text-align: center; font-family: 'Inter', sans-serif;">
+  <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #2e2e2e;">About Me</h2>
+  <img src="MY PHOTO.jpg" alt="Profile Photo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem;" />
+  <div style="max-width: 750px; margin: 0 auto; color: #555; font-size: 1rem; line-height: 1.8; text-align: left;">
+    <p>I am <strong>Precious Omoyeni</strong>, a product manager with a deep interest in building thoughtful, user-friendly digital products.</p>
+    <p>I’ve worked on several products where I collaborated closely with engineers, designers, and stakeholders to define features, write user stories, and help bring ideas to life. I enjoy connecting the dots between user needs, business goals, and technical realities.</p>
+    <p>Over time, I’ve picked up skills in wireframing, user research, writing PRDs, and using tools like Figma, Notion, and Linear. I’ve also explored technical workflows like understanding how coding works and basic deployment, which helps me better understand how products actually get built.</p>
+    <p>What drives me most is curiosity. I love asking why, figuring out how things work, and finding better ways to solve real problems. I’m especially drawn to fast-moving environments where there’s room to learn, grow, and build things that make a difference. I’m committed to learning, improving, and delivering meaningful value one feature at a time.</p>
+  </div>
+
+  <div style="margin-top: 3rem;">
+    <h3 style="color: #2e2e2e; margin-bottom: 1rem;">Skills</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Product strategy</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Wireframing</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Roadmapping</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">User flow</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Market research</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">PRD writing</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Communication</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Problem solving</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Analytical skills</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Testing</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 3rem;">
+    <h3 style="color: #2e2e2e; margin-bottom: 1rem;">Tools</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Google Docs</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Google Sheets</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Notion</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Jira</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">ClickUp</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Linear</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Trello</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Figma</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">GitHub</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Lovable</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Postman</span>
+    </div>
+  </div>
+</section>
+
+  </div>
+
+  <!-- Include Projects Section -->
+  <!-- Drag your projects.html content below -->
+  <div id="projects-section">
+    <section id="projects" style="background-color: #fdf6ec; padding: 4rem 2rem; font-family: 'Inter', sans-serif;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2.5rem; color: #2e2e2e;">Projects</h2>
+  <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 1000px; margin: 0 auto;">
+
+    <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <h3 style="margin-bottom: 0.5rem; color: #333;">Gradific</h3>
+      <p style="color: #555; margin-bottom: 0.75rem;">A web app designed to automate grading for educators.</p>
+      <p style="font-size: 0.9rem; color: #777; margin-bottom: 1rem;"><strong>Tools:</strong> Figma, Google doc, Linear, power point, Google sheets, Postman</p>
+      <a href="project 1.html" style="text-decoration: none; color: #7a5c3d; font-weight: 600;">View project →</a>
+    </div>
+
+    <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <h3 style="margin-bottom: 0.5rem; color: #333;">Suiviparcel</h3>
+      <p style="color: #555; margin-bottom: 0.75rem;">A delivery app(mobile and web app) that allows people send parcel and monitor them.</p>
+      <p style="font-size: 0.9rem; color: #777; margin-bottom: 1rem;"><strong>Tools:</strong> Google doc, Figma, trello, Linear,Google Sheets</p>
+      <a href="#" style="text-decoration: none; color: #7a5c3d; font-weight: 600;">View Project →</a>
+    </div>
+
+    <div style="background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+      <h3 style="margin-bottom: 0.5rem; color: #333;">Agmazon</h3>
+      <p style="color: #555; margin-bottom: 0.75rem;">An Agricultural E-commerce platforms that connects farmers to buyers.</p>
+      <p style="font-size: 0.9rem; color: #777; margin-bottom: 1rem;"><strong>Tools:</strong> Figma, GitHub, Google doc,notion,Google sheet</p>
+      <a href="#" style="text-decoration: none; color: #7a5c3d; font-weight: 600;">View project →</a>
+    </div>
+
+  </div>
+</section>
+
+  </div>
+
+  <!-- Include Resume Section -->
+  <!-- Drag your resume.html content below -->
+  <div id="resume-section">
+    <section id="resume" style="background-color: #fff; padding: 4rem 2rem; font-family: 'Inter', sans-serif; text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #2e2e2e;">Resume</h2>
+
+  <p style="color: #555; font-size: 1rem; max-width: 600px; margin: 0 auto 2rem auto;">
+    Download my resume or explore my skills below to see how I help transform ideas into impactful digital solutions.
+  </p>
+
+  <a href="My resume.pdf" download style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #7a5c3d; color: #fff; text-decoration: none; border-radius: 30px; font-weight: 500; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background-color 0.3s ease;">
+    Download Resume (PDF)
+  </a>
+
+  <div style="margin-top: 3rem;">
+    <h3 style="color: #2e2e2e; margin-bottom: 1rem;">Core Skills</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Product Strategy</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Wireframing</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Roadmapping</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">User Flow</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">PRD Writing</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Communication</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Problem Solving</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">Analytical Skills</span>
+      <span style="background-color: #fdf6ec; padding: 0.5rem 1.2rem; border-radius: 30px; color: #7a5c3d; font-weight: 500;">User Testing</span>
+    </div>
+  </div>
+</section>
+
+  </div>
+
+  <!-- Include Contact Section -->
+  <!-- Drag your contact.html content below -->
+  <div id="contact-section">
+    <section id="contact" style="background-color: #fff; padding: 4rem 2rem; font-family: 'Inter', sans-serif; text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 2rem; color: #2e2e2e;">Contact Me</h2>
+  <p style="color: #555; font-size: 1rem; max-width: 600px; margin: 0 auto 2.5rem auto;">
+    I’d love to connect and explore how I can support your team or project. Feel free to reach out via email or LinkedIn.
+  </p>
+
+  <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+    <a href="preciousomoyeni6@gmail.com" style="display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; background-color: #fdf6ec; color: #7a5c3d; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.05); font-weight: 500;">
+      📧 preciousomoyeni@gmail.com
+    </a>
+
+    <a href="https://www.linkedin.com/in/precious-omoyeni-a4ba3425b?" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; background-color: #fdf6ec; color: #7a5c3d; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.05); font-weight: 500;">
+      💼 LinkedIn
+    </a>
+
+  </div>
+</section>
+
+  </div>
 
   <!-- Footer -->
-  <footer style="background-color: #004d40; color: white; text-align: center; padding: 20px;">
-    &copy; 2025 AGMAZON. All rights reserved. | Made with 💚 in Africa
+  <footer style="text-align: center; padding: 2rem; font-size: 0.9rem; background: #fff; color: #888;">
+    &copy; 2025 Precious Omoyeni. All rights reserved.
   </footer>
 
+  <script src="Script.js"></script>
 </body>
 </html>
