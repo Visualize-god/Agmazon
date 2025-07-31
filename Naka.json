@@ -1,0 +1,154 @@
+{
+  "name": "Tally + AI + Airtable Merge",
+  "nodes": [
+    {
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tally-form"
+      }
+    },
+    {
+      "id": "setInput",
+      "name": "Set Input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [300, 300],
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "name",
+              "value": "={{ $json.body.Name }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json.body.Email }}"
+            },
+            {
+              "name": "question",
+              "value": "={{ $json.body.Question }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "httpRequest",
+      "name": "Ask AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [300, 100],
+      "parameters": {
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "method": "POST",
+        "authentication": "none",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "options": {},
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer YOUR_OPENROUTER_API_KEY"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "bodyParametersJson": "={\n  \"model\": \"mistralai/mixtral-8x7b-instruct\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $json.question }}\"\n    }\n  ],\n  \"temperature\": 0.6,\n  \"max_tokens\": 300\n}"
+      }
+    },
+    {
+      "id": "mergeNode",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 1,
+      "position": [500, 200],
+      "parameters": {
+        "mode": "mergeByPosition"
+      }
+    },
+    {
+      "id": "airtable",
+      "name": "Save to Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 1,
+      "position": [700, 200],
+      "credentials": {
+        "airtableApi": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Airtable Account"
+        }
+      },
+      "parameters": {
+        "operation": "create",
+        "baseId": "YOUR_BASE_ID",
+        "tableId": "YOUR_TABLE_ID",
+        "fields": {
+          "Name": "={{ $json.name }}",
+          "Email": "={{ $json.email }}",
+          "Question": "={{ $json.question }}",
+          "AI reply": "={{ $json.choices[0].message.content }}"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Input": {
+      "main": [
+        [
+          {
+            "node": "Ask AI",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask AI": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Save to Airtable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  ],
+  "active": true
+}
